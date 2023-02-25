@@ -2,6 +2,13 @@
 // Testing the console
 console.log("test")
 
+var lowercase = "abcdefghijklomnpqrstuvwxyz"
+var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+var numbers = "0123456789"
+var specialCharaters = "!@#$%^&*()_+{}[]|\\:;<>,.?/~`"
+var passwordLength = 8 || 128
+
+var options = []
 // Assignment Code
 
 // The user clicks the 'generate' button
@@ -19,10 +26,54 @@ function confirmGenerate() {
     
     console.log("Password Generator commenced!");
     
-    var passwordLenth = prompt("Password Length: choose a number between 8 and 128.");
-  
-  //if (prompt(8~128) == true)
+    var passwordLength = prompt("Password Length: choose a number between 8 and 128.");
+    // error run for numbers less than 8 and greater than 128
+    if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
+      alert("Error = please choose a number between 8 and 128");
+      return prompt("Password Length: choose a number between 8 and 128.");
+    }
     
+    // accepts and prints to console if between 8 and 128
+    if (passwordLength > 8 || passwordLength < 128 || (passwordLength) === true) {
+      console.log(passwordLength);
+
+      function selectCriteria() {
+      if (confirm("Do you want to include numbers in your password? Click 'Ok' to include, click 'cancel' to leave out.") === true) {
+        // print to console
+        console.log("Include numbers");
+        return;
+      }
+
+      if (confirm("Do you want to include special characters (eg., @ % $ !) in your password? Click 'Ok' to include, click 'cancel' to leave out.") === true) {
+        //print to console
+        console.log("Include special characters")
+        return;
+      }
+      
+    }
+
+    function selectCriteria() {
+      if (confirm("Do you want to include numbers in your password? Click 'Ok' to include, click 'cancel' to leave out.") === true) {
+        // print to console
+        console.log("Include numbers");
+        return;
+      }
+
+      if (confirm("Do you want to include special characters (eg., @ % $ !) in your password? Click 'Ok' to include, click 'cancel' to leave out.") === true) {
+        //print to console
+        console.log("Include special characters")
+        return;
+      }
+
+
+
+
+    var includeNumbers = alert("Do you want to include numbers in your password? Click 'Ok' to include, click 'cancel' to leave out.");
+    let includeSpecialCharacters = alert("Do you want to include special characters in your password? Click 'Ok' to include, click 'cancel' to leave out.");
+    let includeUppercase = alert("Do you want to include uppercase letters in your password? Click 'Ok' to include, click 'cancel' to leave out.");
+    let includeLowercase = alert("Do you want to include lowercase letters in your password? Click 'Ok' to include, click 'cancel' to leave out.");
+    }
+// user cancels Password Generator
   } else {
     // print to console
     console.log("Password Generator cancelled!");
@@ -30,13 +81,10 @@ function confirmGenerate() {
 }
 
 
-
-
-
-/*
-function passwordLength() {
-  var passwordLenth = prompt("Password Length: choose a number between 8 and 128.");
 }
+
+
+
 
 // Event listener runs the first prompt
 // Add event listener to generate button
