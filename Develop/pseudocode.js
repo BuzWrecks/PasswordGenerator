@@ -1,27 +1,62 @@
 // The user clicks 'Generate'
 
-
-
 // Prompt 1 - what length password, choose a number between 8 and 128
+
 // check for error - if number selected <8 or >128 respond "please select a number between 8 and 128"
+
 // no error accept
+
 // Prompt 2 - choose what characters you want to include in your password
+
 // prompt box to include 4 check-boxes
+
 // check-box uppercase
+
 // check-box lowercase
+
 // check-box number
+
 // checkbox special characters
+
 // check for error "at least one character type must be selected"
+
 // if no error accept
 
-
 // generate password 
+
 // -- number of each selected character type to be random
+
 // -- each character type to be random
 
 // print password to the text box
+
 // same password not to be printed twice in a row
+
 // "retry" button
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Define the available character types
@@ -120,13 +155,17 @@ const characterTypes = {
     var length = parseInt(prompt("How long would you like your password to be? (8-128 characters)"));
   
   // Write password to the #password input
-  function writePassword() {
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
-    
-   
   
-    passwordText.value = password;
+    
+       function writePassword() {
+      const generatePassword = confirmGenerate();
+      if (generatePassword) {
+        const password = generatePassword(password);
+        console.log(password);
+        alert(`Your new password is: ${password}`);
+      }
+  
+    
   
   }
   
@@ -143,19 +182,22 @@ const characterTypes = {
   var numbers = "1234567890";
   var specialCharacters ="`~!@#$%^&*()_+[]{}\|;:?><,./-=";
   
-  // Write password to the #password input
-  function writePassword() {
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
   
-    passwordText.value = password;
   
   }
   
   // Add event listener to generate button
   generateBtn.addEventListener("click", writePassword);
   
+    // Write password to the #password input
+  function writePassword() {
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+    alert("Your new password is " + password + ".");
   
+    passwordText.value = password;
+
+  }
   
   
   
