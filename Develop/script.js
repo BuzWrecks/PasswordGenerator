@@ -42,6 +42,9 @@ function generatePassword() {
           if (includeNumbers) {
             passwordChars = passwordChars.concat(numberChars);
           }
+          if (includeNumbers && includeLowercase && includeSpecial && includeUppercase) {
+            alert("You have chosen to generate a randome password from the following character set: " + passwordChars)
+          }
           if (!includeNumbers && !includeSpecial && !includeUppercase && !includeLowercase) {
             return alert("Error - you must choose at least one character set to include! Click the 'Generate Password' button to start again.")
           }
@@ -51,7 +54,8 @@ function generatePassword() {
             password += passwordChars[Math.floor(Math.random() * passwordChars.length)];
           }
           // Output password to console
-          console.log(password)
+          console.log(password);
+          return password;
     } 
   
 }
