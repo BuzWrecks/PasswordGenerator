@@ -1,3 +1,24 @@
+var uppercaseCharacters = []
+
+var lowercaseCharacters = 
+
+
+var possibleCharacters = []
+
+// generate one character from each chosed character type
+
+// randomise location of characters
+
+// chosen password length generates number of locations
+// randomise location of the mandatory chosen characters
+
+// string.split(separator, limit)
+// const myArray = text.split("o")
+
+let lowercase = "abcdefghijklmnopqrstuvwxyz";
+const lowercaseCharacters = text.split("");
+console.log(lowercaseCharacters)
+
 // The user clicks 'Generate'
 
 // Prompt 1 - what length password, choose a number between 8 and 128
